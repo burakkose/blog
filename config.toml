@@ -1,5 +1,5 @@
 # Site Configuration
-base_url = "https://kose.systems"
+base_url = "https://burak.kose.systems"
 title = "burakkose::blog"
 description = "A personal blog about software engineering and tech."
 default_language = "en"
