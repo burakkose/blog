@@ -1,0 +1,6 @@
+/public
+/dist
+/node_modules
+/.cloudflare
+.DS_Store
+*.log

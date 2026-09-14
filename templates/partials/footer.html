@@ -1,0 +1,24 @@
+<footer>
+    <div class="footer-divider"></div>
+    <div class="footer-content">
+        <div class="footer-row footer-top">
+            <span class="footer-name">{{ config.extra.footer.name | default(value=config.title) }}</span>
+            <div class="footer-feeds">
+                <a href="{{ get_url(path='rss.xml') }}">RSS</a>
+                <span class="dot-separator">•</span>
+                <a href="{{ get_url(path='atom.xml') }}">Atom</a>
+            </div>
+        </div>
+
+        <p class="footer-disclaimer">
+            {{ config.extra.footer.disclaimer | default(value="The opinions on this site are my own. They do not necessarily represent those of my employer.") }}
+            {% if config.extra.footer.email %}
+                :: <a href="mailto:{{ config.extra.footer.email }}">{{ config.extra.footer.email }}</a>
+            {% endif %}
+        </p>
+
+        <p class="footer-license">
+            This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International License</a>.
+        </p>
+    </div>
+</footer>

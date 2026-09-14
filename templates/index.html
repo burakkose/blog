@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    {% set posts_section = get_section(path="posts/_index.md") %}
+    {% set about = config.extra.about | default(value={}) %}
+    {% set about_title = about.title | default(value="About Me") %}
+    {% set about_content = about.content | default(value="Welcome to my blog! I write about software engineering, technology, and building great products.") %}
+    {% set about_avatar = about.avatar | default(value="") %}
+
+    <div class="homepage-layout">
+        <div class="posts-column">
+            <div class="page-header">Posts</div>
+            {% if posts_section.pages %}
+                <main class="post-list">
+                    {{<post.list_posts pages={posts_section.pages} />}}
+                </main>
+            {% else %}
+                <p>No posts published yet.</p>
+            {% endif %}
+        </div>
+
+        <aside class="about-column">
+            <div class="about-card">
+                <div class="about-card-header">
+                    {% if about_avatar %}
+                        <img src="{{ get_url(path=about_avatar) }}" alt="{{ about_title }}" class="about-card-avatar" />
+                    {% endif %}
+                    <h2 class="about-card-title">{{ about_title }}</h2>
+                </div>
+                <div class="about-card-content">
+                    {{ about_content | markdown | safe }}
+                </div>
+            </div>
+        </aside>
+    </div>
+{% endblock main_content %}

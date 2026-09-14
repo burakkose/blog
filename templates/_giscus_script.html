@@ -1,0 +1,27 @@
+{% set giscus = config.extra.giscus | default(value={}) %}
+{% set repo = giscus.repo | default(value="YOUR_USERNAME/YOUR_REPO") %}
+{% set repo_id = giscus.repo_id | default(value="") %}
+{% set category = giscus.category | default(value="General") %}
+{% set category_id = giscus.category_id | default(value="") %}
+{% set mapping = giscus.mapping | default(value="pathname") %}
+{% set theme = giscus.theme | default(value="light") %}
+{% set reactions_enabled = giscus.reactions_enabled | default(value="1") %}
+{% set emit_metadata = giscus.emit_metadata | default(value="0") %}
+{% set input_position = giscus.input_position | default(value="bottom") %}
+{% set lang = giscus.lang | default(value="en") %}
+
+<script src="https://giscus.app/client.js"
+        data-repo="{{ repo }}"
+        {% if repo_id %}data-repo-id="{{ repo_id }}"{% endif %}
+        {% if category %}data-category="{{ category }}"{% endif %}
+        {% if category_id %}data-category-id="{{ category_id }}"{% endif %}
+        data-mapping="{{ mapping }}"
+        data-strict="0"
+        data-reactions-enabled="{{ reactions_enabled }}"
+        data-emit-metadata="{{ emit_metadata }}"
+        data-input-position="{{ input_position }}"
+        data-theme="{{ theme }}"
+        data-lang="{{ lang }}"
+        crossorigin="anonymous"
+        async>
+</script>

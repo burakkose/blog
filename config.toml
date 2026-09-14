@@ -1,0 +1,90 @@
+# Site Configuration
+base_url = "https://kose.systems"
+title = "burakkose::blog"
+description = "A personal blog about software engineering and tech."
+default_language = "en"
+theme = "apollo"
+
+# Build & Output Settings
+build_search_index = false
+generate_feeds = true
+generate_sitemap = true
+feed_filenames = ["atom.xml", "rss.xml"]
+compile_sass = true
+minify_html = true
+
+taxonomies = [{ name = "tags" }]
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = "elasticlunr_json"
+
+[markdown.highlighting]
+style = "class"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[extra]
+theme = "light"              # Enforce light theme
+toc = true
+fancy_code = true
+dynamic_note = true
+mathjax = false
+
+# Custom Stylesheet
+stylesheets = ["css/custom.css"]
+
+# Navigation Menu (Home page serves all posts)
+menu = []
+
+# Social Links
+socials = [
+    { name = "github", url = "https://github.com/burakkose", icon = "github" },
+    { name = "x-twitter", url = "https://x.com/burakkose41", icon = "x-twitter" },
+    { name = "rss", url = "/rss.xml", icon = "rss" },
+]
+
+# About Me Section on Custom Home Page
+[extra.about]
+title = "About Me"
+content = """
+Hi, I'm Burak Kose. I enjoy engineering systems to process and manage data at large scale.
+
+I am a Principal Engineer at Microsoft in Azure Database Systems, keeping services highly available.
+"""
+
+# Google Analytics
+[extra.analytics]
+enabled = true
+
+[extra.analytics.goatcounter]
+user = ""
+host = ""
+
+[extra.analytics.umami]
+website_id = ""
+host_url = ""
+
+[extra.analytics.google]
+tracking_id = "G-XXXXXXXXXX"  # Replace with your Google Analytics Measurement ID (e.g. G-1234567890)
+
+# Giscus Comments for Posts
+[extra.giscus]
+repo = "burakkose/blog"
+repo_id = "R_kgDOUaDKuw"
+category = "General"
+category_id = "DIC_kwDOUaDKu84DFjo0"
+mapping = "url"
+theme = "light"
+reactions_enabled = "0"
+
+# Footer Configuration
+[extra.footer]
+name = "Burak Kose"
+disclaimer = "Views expressed here are solely my own and do not reflect the positions of my employer."
+email = ""                                # e.g. "yourname@example.com" (optional)
+license = "This work is licensed under a Creative Commons Attribution 4.0 International License."
+
